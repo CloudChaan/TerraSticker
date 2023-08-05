@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
-using StickersTest.Utils;
+using TerraSticker.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +14,7 @@ using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 using Terraria.UI;
 
-namespace StickersTest.UIs
+namespace TerraSticker.UIs
 {
     public class StickerSenderUI : UIState
     {
@@ -31,13 +31,13 @@ namespace StickersTest.UIs
             Append(senderPanel);
 
             var deckList = StickerModSaveConfig.LoadConfig().stickers;
-            var emptyStickerImage = ModContent.Request<Texture2D>("StickersTest/Assets/Images/non_content_sticker", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+            var emptyStickerImage = ModContent.Request<Texture2D>("TerraSticker/Assets/Images/non_content_sticker", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
             var buttons = new Dictionary<int, UIStickerManagerButton>();
             foreach (var deck in deckList)
             {
                 if (deck.Value != null)
                 {
-                    var sticker = new UIStickerManagerButton(ModContent.GetInstance<StickersTest>().myPathUtils.GetCachePathFromOriginalImagePath(deck.Value));
+                    var sticker = new UIStickerManagerButton(ModContent.GetInstance<TerraSticker>().myPathUtils.GetCachePathFromOriginalImagePath(deck.Value));
                     buttons.Add(deck.Key, sticker);
                     sticker.index = deck.Key;
 
@@ -64,7 +64,7 @@ namespace StickersTest.UIs
         }
 
 
-        private void StickerButton_Click(UIMouseEvent evt, UIElement listeningElement, UIStickerManagerButton button)
+        private async void StickerButton_Click(UIMouseEvent evt, UIElement listeningElement, UIStickerManagerButton button)
         {
             //发送图片
             //首先判断图片是PNG还是GIF
@@ -82,7 +82,7 @@ namespace StickersTest.UIs
                 case ".gif":
                     var gifMemory = ImageUtils.GetMemoryFromImage(imagePath);
                     var gif = Image.Load<Rgba32>(imagePath);
-                    ImageUtils.SendGif(gifMemory, gif, Main.LocalPlayer.name, imagePath);
+                    await Task.Run(() => ImageUtils.SendGif(gifMemory, gif, Main.LocalPlayer.name, imagePath)); // 使用Task.Run移动到后台线程
                     break;
             }
 

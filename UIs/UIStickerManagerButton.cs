@@ -12,10 +12,10 @@ using Microsoft.Xna.Framework;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria;
-using StickersTest.Utils;
+using TerraSticker.Utils;
 using System.IO;
 
-namespace StickersTest.UIs
+namespace TerraSticker.UIs
 {
     public class UIStickerManagerButton : UITexture2DButton
     {
@@ -23,8 +23,8 @@ namespace StickersTest.UIs
         public int borderHeight = 25;
         private float _visibilityActive = 1f;
         private float _visibilityInactive = 0.7f;
-        public Texture2D borderBlue = ModContent.Request<Texture2D>("StickersTest/Assets/Images/border_blue", AssetRequestMode.ImmediateLoad).Value;
-        public Texture2D borderRed = ModContent.Request<Texture2D>("StickersTest/Assets/Images/border_red", AssetRequestMode.ImmediateLoad).Value;
+        public Texture2D borderBlue = ModContent.Request<Texture2D>("TerraSticker/Assets/Images/border_blue", AssetRequestMode.ImmediateLoad).Value;
+        public Texture2D borderRed = ModContent.Request<Texture2D>("TerraSticker/Assets/Images/border_red", AssetRequestMode.ImmediateLoad).Value;
         public string cachePath;
         public int index;
 
@@ -55,7 +55,7 @@ namespace StickersTest.UIs
             }
             else
             {
-                texture = ModContent.Request<Texture2D>("StickersTest/Assets/Images/non_content_sticker", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+                texture = ModContent.Request<Texture2D>("TerraSticker/Assets/Images/non_content_sticker", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
                 imagePath = null;
             }
             texture2d = texture;

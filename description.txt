@@ -1,1 +1,13 @@
-Stickers is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+聊天怎么能少了表情包呢
+在泰拉瑞亚里储存并发送你喜欢的表情包！
+
+使用方法：创建新角色时会携带一个表情包泡泡，你可以使用这个物品管理你的表情包。
+如果你使用已经创建的角色，可以用10只兔兔10个云朵块10个棉花糖和一个泰拉饲养笼在工匠作坊处合成表情包泡泡。
+在这之后你需要在"控件"菜单中绑定发送表情包界面的快捷键，注意默认的快捷键会和丢弃物品冲突，如果要使用默认的快捷键请将丢弃物品绑定至其他按键。
+
+How can chatting be complete without stickers?
+Store and send your favorite stickers in Terraria!
+
+Usage: When creating a new character, you'll have a sticker bubble. You can use this item to manage your stickers.
+If you're using an already created character, you can craft a sticker bubble at the Tinkerer's Workshop using 10 bunnies, 10 cloud blocks, 10 marshmallows, and a Terrarium.
+After this, you'll need to bind a hotkey for the sticker sending interface in the 'Controls' menu. Be aware, the default hotkey might conflict with the drop item action. If you want to use the default, please rebind the drop item action to another key.

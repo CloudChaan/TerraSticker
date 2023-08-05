@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
-using StickersTest.UIs;
+using TerraSticker.UIs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.UI;
 
-namespace StickersTest.Utils
+namespace TerraSticker.Utils
 {
     public static class UIUtiles
     {

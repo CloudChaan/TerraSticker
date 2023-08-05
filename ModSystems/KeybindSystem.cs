@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria.ModLoader;
 
-namespace StickersTest.ModSystems
+namespace TerraSticker.ModSystems
 {
     public class KeybindSystem : ModSystem
     {

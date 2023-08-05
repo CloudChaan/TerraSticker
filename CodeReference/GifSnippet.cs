@@ -1,16 +1,16 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Graphics;
-using StickersTest.Utils;
+using TerraSticker.Utils;
 using System.Diagnostics;
 using Terraria;
 using Terraria.UI.Chat;
 
-namespace StickersTest.CodeReference;
+namespace TerraSticker.CodeReference;
 
 public class GifSnippet : TextSnippet, IImageSnippet
 {
-    private int GifDelay = StickersTest.ClientConfig.FramesSpeed;
+    private int GifDelay = TerraSticker.ClientConfig.FramesSpeed;
 
     private Texture2D[] _frames;
     private string _imagePath;
@@ -34,7 +34,7 @@ public class GifSnippet : TextSnippet, IImageSnippet
         int width = _frames[0].Width;
         int height = _frames[0].Height;
 
-        int snippetWidth = StickersTest.ClientConfig.WidthInChat;
+        int snippetWidth = TerraSticker.ClientConfig.WidthInChat;
         if (width > snippetWidth || height > snippetWidth)
         {
             if (width > height)
@@ -62,7 +62,7 @@ public class GifSnippet : TextSnippet, IImageSnippet
 
     public override void Update()
     {
-        if (_deathWatch == null || _deathWatch.ElapsedMilliseconds >= StickersTest.ServerConfig.GifLifetime * 1000)
+        if (_deathWatch == null || _deathWatch.ElapsedMilliseconds >= TerraSticker.ServerConfig.GifLifetime * 1000)
         {
             _frames = null;
             _deathWatch = null;
@@ -104,7 +104,7 @@ public class GifSnippet : TextSnippet, IImageSnippet
 
         if (!justCheckingString && color != Color.Black)
         {
-            float opacity = StickersTest.ClientConfig.Opacity;
+            float opacity = TerraSticker.ClientConfig.Opacity;
 
             spriteBatch.Draw(
                 _frames[_currentFrameIndex], position, null,

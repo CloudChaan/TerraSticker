@@ -9,7 +9,7 @@ using Terraria.GameContent;
 using Terraria.ModLoader;
 using Terraria.UI;
 
-namespace StickersTest.CodeReference
+namespace TerraSticker.CodeReference
 {
     public class BasicsSystem : ModSystem
     {

@@ -10,7 +10,7 @@ using Terraria.GameContent.UI.Chat;
 using Terraria.ModLoader;
 using Terraria.UI.Chat;
 
-namespace StickersTest.CodeReference;
+namespace TerraSticker.CodeReference;
 
 public class RemadeChatMonitorHooks : ModSystem
 {

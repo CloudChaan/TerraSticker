@@ -1,0 +1,53 @@
+Mods: {
+	TerraSticker: {
+		Keybinds.LongPressToOpenStickerSendPanel.DisplayName: 长按打开表情包面板♡
+
+		Items: {
+			StickerBubble: {
+				DisplayName: 表情包泡泡
+				Tooltip: 快用你的可爱♡填满它！
+			}
+		}
+
+		Configs: {
+			ClientConfig: {
+				DisplayName: 客户端设置
+				WindowWarning.Tooltip: ""
+				AutoClear.Tooltip: ""
+
+				FramesSpeed: {
+					Label: 帧速率
+					Tooltip: 调整GIF图播放速度
+				}
+			}
+
+			TerraStickerClientConfig: {
+				WindowWarningLabel: Window Warning
+				AutoClearLabel: Auto Clear
+				Gif_Appearance: Width In Chat Header
+				WidthInChatLabel: Width In Chat
+				WidthInChatTooltip: ""
+				OpacityLabel: Opacity
+				OpacityTooltip: ""
+				FramesLimitLabel: Frames Limit
+				FramesLimitTooltip: ""
+			}
+
+			ServerConfig: {
+				DisplayName: 服务端设置
+				Headers.Performance: Performance Header
+			}
+
+			TerraStickerServerConfig: {
+				MaximumFileSizeLabel: Maximum File Size
+				MaximumFileSizeTooltip: ""
+				SendCapLabel: Send Cap
+				SendCapTooltip: ""
+				GifLifetimeLabel: Gif Lifetime
+				GifLifetimeTooltip: ""
+				GifSendDelayLabel: Gif Send Delay
+				GifSendDelayTooltip: ""
+			}
+		}
+	}
+}

@@ -1,5 +1,5 @@
-StickersTestClientConfig: {
-	DisplayName: StickersTest Config
+TerraStickerClientConfig: {
+	DisplayName: Let's Sticker! Client Config
 
 	WindowWarning: {
 		Label: Window Warning
@@ -10,7 +10,6 @@ StickersTestClientConfig: {
 		Label: Auto Clear
 		Tooltip: ""
 	}
-
 
 	WidthInChat: {
 		Label: Scale (20-200)
@@ -27,25 +26,13 @@ StickersTestClientConfig: {
 		Tooltip: Determines the max amount of frames that will be extracted from a Gif. Lower values recommended for lower-end machines
 	}
 
-	Headers: {
-		Gif_Appearance: Gif Appearance
-	}
-
-	WindowWarningLabel: Window Warning
-	AutoClearLabel: Auto Clear
+	Headers.Gif_Appearance: Gif Appearance
 	ResultsLimitLabel: Results Limit
 	ResultsLimitTooltip: ""
-	Gif_Appearance: Width In Chat Header
-	WidthInChatLabel: Width In Chat
-	WidthInChatTooltip: ""
-	OpacityLabel: Opacity
-	OpacityTooltip: ""
-	FramesLimitLabel: Frames Limit
-	FramesLimitTooltip: ""
 }
 
-StickersTestServerConfig: {
-	DisplayName: StickersTest Server Config
+TerraStickerServerConfig: {
+	DisplayName: Let's Sticker! Server Config
 
 	MaximumFileSize: {
 		Label: Maximum File Size
@@ -57,7 +44,6 @@ StickersTestServerConfig: {
 		Tooltip: ""
 	}
 
-
 	GifLifetime: {
 		Label: Gif Lifetime (15-120 sec.)
 		Tooltip: Dictates how long a Gif will stay in chat until it gets removed
@@ -68,39 +54,16 @@ StickersTestServerConfig: {
 		Tooltip: Dictates the delay between Gifs for each player
 	}
 
-	Headers: {
-		Performance: Performance
-	}
-
-	MaximumFileSizeLabel: Maximum File Size
-	MaximumFileSizeTooltip: ""
-	SendCapLabel: Send Cap
-	SendCapTooltip: ""
-	GifLifetimeLabel: Gif Lifetime
-	GifLifetimeTooltip: ""
-	GifSendDelayLabel: Gif Send Delay
-	GifSendDelayTooltip: ""
+	Headers.Performance: Performance
 }
 
 ClientConfig: {
-	DisplayName: Client Config
-	WindowWarning.Tooltip: ""
-	AutoClear.Tooltip: ""
 	ScreenshotClipboard.Tooltip: ""
 	ScreenshotToChat.Tooltip: ""
 	GifsEnabled.Tooltip: ""
 
 	FramesSpeed: {
-		Label: Frames Speed
-		Tooltip: ""
 	}
 }
 
-ServerConfig: {
-	DisplayName: Server Config
-
-	Headers: {
-		GIFs_in_Chat: G I Fs_in_ Chat Header
-		Performance: Performance Header
-	}
-}
+ServerConfig.Headers.GIFs_in_Chat: G I Fs_in_ Chat Header

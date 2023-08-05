@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using Terraria.ModLoader.Config;
 
-namespace StickersTest.ModConfigs
+namespace TerraSticker.ModConfigs
 {
     public class ClientConfig : ModConfig
     {
@@ -10,32 +10,32 @@ namespace StickersTest.ModConfigs
 
         public override void OnLoaded()
         {
-            StickersTest.ClientConfig = this;
+            TerraSticker.ClientConfig = this;
         }
 
         [DefaultValue(false)]
-        [LabelKey("$Mods.StickersTest.Configs.StickersTestClientConfig.WindowWarningLabel")]
+        [LabelKey("$Mods.TerraSticker.Configs.TerraStickerClientConfig.WindowWarningLabel")]
         public bool WindowWarning;
 
         [DefaultValue(true)]
-        [LabelKey("$Mods.StickersTest.Configs.StickersTestClientConfig.AutoClearLabel")]
+        [LabelKey("$Mods.TerraSticker.Configs.TerraStickerClientConfig.AutoClearLabel")]
         public bool AutoClear;
 
-        [Header("$Mods.StickersTest.Configs.StickersTestClientConfig.Gif_Appearance")]
-        [LabelKey("$Mods.StickersTest.Configs.StickersTestClientConfig.WidthInChatLabel")]
-        [TooltipKey("$Mods.StickersTest.Configs.StickersTestClientConfig.WidthInChatTooltip")]
+        [Header("$Mods.TerraSticker.Configs.TerraStickerClientConfig.Gif_Appearance")]
+        [LabelKey("$Mods.TerraSticker.Configs.TerraStickerClientConfig.WidthInChatLabel")]
+        [TooltipKey("$Mods.TerraSticker.Configs.TerraStickerClientConfig.WidthInChatTooltip")]
         [DefaultValue(150)]
         [Range(20, 200)]
         public int WidthInChat;
 
-        [LabelKey("$Mods.StickersTest.Configs.StickersTestClientConfig.OpacityLabel")]
-        [TooltipKey("$Mods.StickersTest.Configs.StickersTestClientConfig.OpacityTooltip")]
+        [LabelKey("$Mods.TerraSticker.Configs.TerraStickerClientConfig.OpacityLabel")]
+        [TooltipKey("$Mods.TerraSticker.Configs.TerraStickerClientConfig.OpacityTooltip")]
         [DefaultValue(1f)]
         [Range(0, 1)]
         public float Opacity;
 
-        [LabelKey("$Mods.StickersTest.Configs.StickersTestClientConfig.FramesLimitLabel")]
-        [TooltipKey("$Mods.StickersTest.Configs.StickersTestClientConfig.FramesLimitTooltip")]
+        [LabelKey("$Mods.TerraSticker.Configs.TerraStickerClientConfig.FramesLimitLabel")]
+        [TooltipKey("$Mods.TerraSticker.Configs.TerraStickerClientConfig.FramesLimitTooltip")]
         [DefaultValue(150)]
         [Range(5, 150)]
         public int FramesLimit;

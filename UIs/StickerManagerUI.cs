@@ -2,8 +2,8 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ReLogic.Content;
-using StickersTest.Items;
-using StickersTest.Utils;
+using TerraSticker.Items;
+using TerraSticker.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,7 +17,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.UI;
 
-namespace StickersTest.UIs
+namespace TerraSticker.UIs
 {
     public class StickerManagerUI:UIState
     {
@@ -52,8 +52,8 @@ namespace StickersTest.UIs
             buttonsPanel.VAlign = 1;
             stickersManagerPanel.Append(buttonsPanel);
 
-            lastPageButton = new UIImageButton(ModContent.Request<Texture2D>("StickersTest/Assets/Images/leftArrow", AssetRequestMode.ImmediateLoad));
-            lastPageButton.SetHoverImage(ModContent.Request<Texture2D>("StickersTest/Assets/Images/leftArrow_border", AssetRequestMode.ImmediateLoad));
+            lastPageButton = new UIImageButton(ModContent.Request<Texture2D>("TerraSticker/Assets/Images/leftArrow", AssetRequestMode.ImmediateLoad));
+            lastPageButton.SetHoverImage(ModContent.Request<Texture2D>("TerraSticker/Assets/Images/leftArrow_border", AssetRequestMode.ImmediateLoad));
             lastPageButton.HAlign = 0;
             lastPageButton.VAlign = 1;
             lastPageButton.Left.Set(10f, 0);
@@ -61,8 +61,8 @@ namespace StickersTest.UIs
             lastPageButton.OnLeftClick += (evt, listeningElement) => ToLastPage(evt, listeningElement);
             stickersManagerPanel.Append(lastPageButton);
 
-            nextPageButton = new UIImageButton(ModContent.Request<Texture2D>("StickersTest/Assets/Images/rightArrow", AssetRequestMode.ImmediateLoad));
-            nextPageButton.SetHoverImage(ModContent.Request<Texture2D>("StickersTest/Assets/Images/rightArrow_border", AssetRequestMode.ImmediateLoad));
+            nextPageButton = new UIImageButton(ModContent.Request<Texture2D>("TerraSticker/Assets/Images/rightArrow", AssetRequestMode.ImmediateLoad));
+            nextPageButton.SetHoverImage(ModContent.Request<Texture2D>("TerraSticker/Assets/Images/rightArrow_border", AssetRequestMode.ImmediateLoad));
             nextPageButton.HAlign = 1;
             nextPageButton.VAlign = 1;
             nextPageButton.Left.Set(-10f, 0);
@@ -71,24 +71,24 @@ namespace StickersTest.UIs
             stickersManagerPanel.Append(nextPageButton);
 
 
-            stickerManagerUICloseButton = new UIImageButton(ModContent.Request<Texture2D>("StickersTest/Assets/Images/StickerManagerUICloseButton", AssetRequestMode.ImmediateLoad));
-            stickerManagerUICloseButton.SetHoverImage(ModContent.Request<Texture2D>("StickersTest/Assets/Images/StickerManagerUICloseButton_borderTexture", AssetRequestMode.ImmediateLoad));
+            stickerManagerUICloseButton = new UIImageButton(ModContent.Request<Texture2D>("TerraSticker/Assets/Images/StickerManagerUICloseButton", AssetRequestMode.ImmediateLoad));
+            stickerManagerUICloseButton.SetHoverImage(ModContent.Request<Texture2D>("TerraSticker/Assets/Images/StickerManagerUICloseButton_borderTexture", AssetRequestMode.ImmediateLoad));
             stickerManagerUICloseButton.HAlign= 1;
             stickerManagerUICloseButton.Left.Set(-10, 0f);
             stickerManagerUICloseButton.Top.Set(10f, 0f);
             stickerManagerUICloseButton.OnLeftClick += new MouseEvent(StickerManagerUICloseButton_Click);
             stickersManagerPanel.Append(stickerManagerUICloseButton);
 
-            uploadImagesButton = new UIImageButton(ModContent.Request<Texture2D>("StickersTest/Assets/Images/UploadImagesButton", AssetRequestMode.ImmediateLoad));
-            uploadImagesButton.SetHoverImage(ModContent.Request<Texture2D>("StickersTest/Assets/Images/UploadImagesButton_borderTexture", AssetRequestMode.ImmediateLoad));
+            uploadImagesButton = new UIImageButton(ModContent.Request<Texture2D>("TerraSticker/Assets/Images/UploadImagesButton", AssetRequestMode.ImmediateLoad));
+            uploadImagesButton.SetHoverImage(ModContent.Request<Texture2D>("TerraSticker/Assets/Images/UploadImagesButton_borderTexture", AssetRequestMode.ImmediateLoad));
             uploadImagesButton.HAlign = 1;
             uploadImagesButton.Left.Set(-stickerManagerUICloseButton.Width.Pixels - 20, 0f);
             uploadImagesButton.Top.Set(10f, 0f);
             uploadImagesButton.OnLeftClick += new MouseEvent(UploadImagesButton_Click);
             stickersManagerPanel.Append(uploadImagesButton);
 
-            refreshFolderButton = new UIImageButton(ModContent.Request<Texture2D>("StickersTest/Assets/Images/refresh", AssetRequestMode.ImmediateLoad));
-            refreshFolderButton.SetHoverImage(ModContent.Request<Texture2D>("StickersTest/Assets/Images/refresh_border", AssetRequestMode.ImmediateLoad));
+            refreshFolderButton = new UIImageButton(ModContent.Request<Texture2D>("TerraSticker/Assets/Images/refresh", AssetRequestMode.ImmediateLoad));
+            refreshFolderButton.SetHoverImage(ModContent.Request<Texture2D>("TerraSticker/Assets/Images/refresh_border", AssetRequestMode.ImmediateLoad));
             refreshFolderButton.HAlign= 1;
             refreshFolderButton.Left.Set(-uploadImagesButton.Width.Pixels - stickerManagerUICloseButton.Width.Pixels - 30, 0);
             refreshFolderButton.Top.Set(10f, 0);
@@ -124,7 +124,7 @@ namespace StickersTest.UIs
 
             if(buttons.Count <= 0)
             {
-                description = new UIText(Language.GetTextValue("Mods.StickersTest.description",$"[i:{ItemID.Bunny}]" , $"[i:{ModContent.ItemType<StickerBubble>()}]").Replace("\\n", Environment.NewLine), 1.5f);
+                description = new UIText(Language.GetTextValue("Mods.TerraSticker.description",$"[i:{ItemID.Bunny}]" , $"[i:{ModContent.ItemType<StickerBubble>()}]").Replace("\\n", Environment.NewLine), 1.5f);
                 description.VAlign = 0.5f;
                 description.Left.Set(20f, 0);
                 stickersManagerPanel.Append(description);
@@ -180,7 +180,7 @@ namespace StickersTest.UIs
 
         private void UploadImagesButton_Click(UIMouseEvent evt, UIElement listeningElement)
         {
-            string folderPath = ModContent.GetInstance<StickersTest>().myPathUtils.imageSavePath;
+            string folderPath = ModContent.GetInstance<TerraSticker>().myPathUtils.imageSavePath;
             System.Diagnostics.Process.Start("explorer.exe", folderPath);
         }
     }

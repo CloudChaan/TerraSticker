@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Graphics;
 
-namespace StickersTest.CodeReference
+namespace TerraSticker.CodeReference
 {
     public interface IImageSnippet
     {

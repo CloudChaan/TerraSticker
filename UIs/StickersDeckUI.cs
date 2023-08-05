@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using StickersTest.Utils;
+using TerraSticker.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 using Terraria.UI;
 
-namespace StickersTest.UIs
+namespace TerraSticker.UIs
 {
     public class StickersDeckUI : UIState
     {
@@ -46,13 +46,13 @@ namespace StickersTest.UIs
             deckPanel.Append(stickersPanel);
 
             var deckList = StickerModSaveConfig.LoadConfig().stickers;
-            var emptyStickerImage = ModContent.Request<Texture2D>("StickersTest/Assets/Images/non_content_sticker", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
+            var emptyStickerImage = ModContent.Request<Texture2D>("TerraSticker/Assets/Images/non_content_sticker", ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
             var buttons = new Dictionary<int, UIStickerManagerButton>();
             foreach ( var deck in deckList )
             {
                 if (deck.Value != null)
                 {
-                    var sticker = new UIStickerManagerButton(ModContent.GetInstance<StickersTest>().myPathUtils.GetCachePathFromOriginalImagePath(deck.Value));
+                    var sticker = new UIStickerManagerButton(ModContent.GetInstance<TerraSticker>().myPathUtils.GetCachePathFromOriginalImagePath(deck.Value));
                     buttons.Add(deck.Key, sticker);
                     sticker.index = deck.Key;
 
@@ -84,7 +84,7 @@ namespace StickersTest.UIs
         private void StickerButton_Click(UIMouseEvent evt, UIElement listeningElement, UIStickerManagerButton button)
         {
             var config = StickerModSaveConfig.LoadConfig();
-            config.stickers[button.index] = ModContent.GetInstance<StickersTest>().myPathUtils.GetOriginalImagePathFromCachePath(selectedSticker.cachePath);
+            config.stickers[button.index] = ModContent.GetInstance<TerraSticker>().myPathUtils.GetOriginalImagePathFromCachePath(selectedSticker.cachePath);
             button.SetImage(selectedSticker.GetImage());
             var ui = ModContent.GetInstance<StickerManagerUISystem>();
             ui.RefreshSenderUI();

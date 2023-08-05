@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ReLogic.Content;
-using StickersTest.Utils;
+using TerraSticker.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,7 +15,7 @@ using Terraria.GameInput;
 using Terraria.ModLoader;
 using Terraria.UI;
 
-namespace StickersTest.UIs
+namespace TerraSticker.UIs
 {
     [Autoload(Side = ModSide.Client)]
     public class StickerManagerUISystem : ModSystem
@@ -91,7 +91,7 @@ namespace StickersTest.UIs
         {
             StickerManagerUISystem stickerManagerUISystem = ModContent.GetInstance<StickerManagerUISystem>();
             stickerManagerUISystem.stickerList.Clear();
-            var mod = ModContent.GetInstance<StickersTest>();
+            var mod = ModContent.GetInstance<TerraSticker>();
             DirectoryInfo folderInfo = new DirectoryInfo(mod.myPathUtils.imageSavePath);
             foreach (FileInfo fi in folderInfo.GetFiles())
             {

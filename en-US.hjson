@@ -1,0 +1,53 @@
+Mods: {
+	TerraSticker: {
+		Keybinds.LongPressToOpenStickerSendPanel.DisplayName: Long Press To Open Sticker Send Panel
+
+		Items: {
+			StickerBubble: {
+				DisplayName: Sticker Bubble
+				Tooltip: ""
+			}
+		}
+
+		Configs: {
+			ClientConfig: {
+				DisplayName: Client Config
+				WindowWarning.Tooltip: ""
+				AutoClear.Tooltip: ""
+
+				FramesSpeed: {
+					Label: Frames Speed
+					Tooltip: ""
+				}
+			}
+
+			TerraStickerClientConfig: {
+				WindowWarningLabel: Window Warning
+				AutoClearLabel: Auto Clear
+				Gif_Appearance: Width In Chat Header
+				WidthInChatLabel: Width In Chat
+				WidthInChatTooltip: ""
+				OpacityLabel: Opacity
+				OpacityTooltip: ""
+				FramesLimitLabel: Frames Limit
+				FramesLimitTooltip: ""
+			}
+
+			ServerConfig: {
+				DisplayName: Server Config
+				Headers.Performance: Performance Header
+			}
+
+			TerraStickerServerConfig: {
+				MaximumFileSizeLabel: Maximum File Size
+				MaximumFileSizeTooltip: ""
+				SendCapLabel: Send Cap
+				SendCapTooltip: ""
+				GifLifetimeLabel: Gif Lifetime
+				GifLifetimeTooltip: ""
+				GifSendDelayLabel: Gif Send Delay
+				GifSendDelayTooltip: ""
+			}
+		}
+	}
+}

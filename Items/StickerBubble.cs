@@ -1,5 +1,5 @@
-﻿using StickersTest.Players;
-using StickersTest.UIs;
+﻿using TerraSticker.Players;
+using TerraSticker.UIs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace StickersTest.Items
+namespace TerraSticker.Items
 {
     public class StickerBubble : ModItem
     {
@@ -29,7 +29,11 @@ namespace StickersTest.Items
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.Wood, 1);
+            recipe.AddIngredient(ItemID.Terrarium, 1);
+            recipe.AddIngredient(ItemID.Bunny, 10);
+            recipe.AddIngredient(ItemID.Cloud, 10);
+            recipe.AddIngredient(ItemID.Marshmallow, 10);
+            recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.Register();
         }
 

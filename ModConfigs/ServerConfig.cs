@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria.ModLoader.Config;
 
-namespace StickersTest.ModConfigs
+namespace TerraSticker.ModConfigs
 {
     public class ServerConfig : ModConfig
     {
@@ -14,31 +14,31 @@ namespace StickersTest.ModConfigs
 
         public override void OnLoaded()
         {
-            StickersTest.ServerConfig = this;
+            TerraSticker.ServerConfig = this;
         }
 
-        [LabelKey("$Mods.StickersTest.Configs.StickersTestServerConfig.MaximumFileSizeLabel")]
-        [TooltipKey("$Mods.StickersTest.Configs.StickersTestServerConfig.MaximumFileSizeTooltip")]
+        [LabelKey("$Mods.TerraSticker.Configs.TerraStickerServerConfig.MaximumFileSizeLabel")]
+        [TooltipKey("$Mods.TerraSticker.Configs.TerraStickerServerConfig.MaximumFileSizeTooltip")]
         [DefaultValue(1f)]
         [Range(0.5f, 10f)]
         [Increment(0.1f)]
         public float MaximumFileSize;
 
-        [LabelKey("$Mods.StickersTest.Configs.StickersTestServerConfig.SendCapLabel")]
-        [TooltipKey("$Mods.StickersTest.Configs.StickersTestServerConfig.SendCapTooltip")]
+        [LabelKey("$Mods.TerraSticker.Configs.TerraStickerServerConfig.SendCapLabel")]
+        [TooltipKey("$Mods.TerraSticker.Configs.TerraStickerServerConfig.SendCapTooltip")]
         [DefaultValue(1)]
         [Range(1, 60)]
         public int SendCap;
 
         [Header("Performance")]
-        [LabelKey("$Mods.StickersTest.Configs.StickersTestServerConfig.GifLifetimeLabel")]
-        [TooltipKey("$Mods.StickersTest.Configs.StickersTestServerConfig.GifLifetimeTooltip")]
+        [LabelKey("$Mods.TerraSticker.Configs.TerraStickerServerConfig.GifLifetimeLabel")]
+        [TooltipKey("$Mods.TerraSticker.Configs.TerraStickerServerConfig.GifLifetimeTooltip")]
         [DefaultValue(15)]
         [Range(15, 120)]
         public int GifLifetime;
 
-        [LabelKey("$Mods.StickersTest.Configs.StickersTestServerConfig.GifSendDelayLabel")]
-        [TooltipKey("$Mods.StickersTest.Configs.StickersTestServerConfig.GifSendDelayTooltip")]
+        [LabelKey("$Mods.TerraSticker.Configs.TerraStickerServerConfig.GifSendDelayLabel")]
+        [TooltipKey("$Mods.TerraSticker.Configs.TerraStickerServerConfig.GifSendDelayTooltip")]
         [DefaultValue(3)]
         [Range(3, 15)]
         public int GifSendDelay;

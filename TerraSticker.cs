@@ -1,10 +1,10 @@
 using Microsoft.Xna.Framework.Input;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
-using StickersTest.CodeReference;
-using StickersTest.ModConfigs;
-using StickersTest.UIs;
-using StickersTest.Utils;
+using TerraSticker.CodeReference;
+using TerraSticker.ModConfigs;
+using TerraSticker.UIs;
+using TerraSticker.Utils;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,8 +14,9 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.UI;
+using System.Threading.Tasks;
 
-namespace StickersTest
+namespace TerraSticker
 {
     public enum PacketType
     {
@@ -24,10 +25,10 @@ namespace StickersTest
         gif0,
         gif1
     }
-    public class StickersTest : Mod
+    public class TerraSticker : Mod
     {
         // 创建一个静态的Mod实例，这样我们就可以在其他地方获取到这个实例
-        public static StickersTest Instance;
+        public static TerraSticker Instance;
         public PathUtils myPathUtils;
 
         internal static List<byte> imageCachedData;
@@ -67,7 +68,7 @@ namespace StickersTest
         }
 
 
-        public override void HandlePacket(BinaryReader reader, int whoAmI)
+        public override async void HandlePacket(BinaryReader reader, int whoAmI)
         {
             switch (reader.ReadByte())
             {
@@ -162,7 +163,7 @@ namespace StickersTest
                             }
                         }
                         var gif = Image.Load<Rgba32>(fileName);
-                        ImageUtils.RenderGif(gif, Main.LocalPlayer.name, fileName);
+                        await Task.Run(() => ImageUtils.RenderGif(gif, Main.LocalPlayer.name, fileName)); // 使用Task.Run移动到后台线程
                         imageCachedData.Clear();
                     }
 
@@ -216,7 +217,7 @@ namespace StickersTest
                 int endIndex = Math.Min(startIndex + batchSize, totalBytes); // 发送[startIndex, endIndex)索引内的所有byte
                 var data = imageBytes[startIndex..endIndex];
 
-                var p = StickersTest.Instance.GetPacket();
+                var p = TerraSticker.Instance.GetPacket();
                 p.Write((byte)PacketType.gif0); // 包类型
                 p.Write((ushort)data.Length); // byte数组长度
                 p.Write(data); // 数据
@@ -225,7 +226,7 @@ namespace StickersTest
                 startIndex = endIndex;
             }
 
-            var finishPacket = StickersTest.Instance.GetPacket();
+            var finishPacket = TerraSticker.Instance.GetPacket();
             finishPacket.Write((byte)PacketType.gif1); // 包类型
             finishPacket.Write(name);
             finishPacket.Send();

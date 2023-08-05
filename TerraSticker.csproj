@@ -2,14 +2,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\tModLoader.targets" />
   <PropertyGroup>
-    <AssemblyName>StickersTest</AssemblyName>
+    <AssemblyName>TerraSticker</AssemblyName>
     <TargetFramework>net6.0</TargetFramework>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Localization\en-US_Mods.StickersTest.Configs.hjson" />
-    <None Remove="Localization\zh-Hans_Mods.StickersTest.hjson" />
+    <None Remove="description_workshop.txt" />
     <None Remove="UIs\testImage.png" />
   </ItemGroup>
   <ItemGroup>

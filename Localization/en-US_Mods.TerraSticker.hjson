@@ -1,0 +1,13 @@
+# This file will automatically update with entries for new content after a build and reload
+
+Items: {
+	StickerBubble: {
+	}
+}
+
+ImageTooLarge: Please select an image file with a size below {0}MB
+OpenImage: Open image
+SelectImage: Select image
+Warn: Warning
+Wait: You must wait {0} seconds to send the image
+description: There are no stickers in your sticker library yet{0}♡\nClick on the 'Place Stickers' button in the top right corner (↑{1}) to open the sticker folder\nPut your stickers in there, then return to the game and click on the refresh button (⟳)\nPlease avoid putting in images with the same filename but different extensions!\nTo send a sticker: Bind a hotkey in 'Controls'\n and then long press it to send a sticker when sticker bubble is closed!\nBe aware, the default hotkey might conflict with the drop item action\n If you want to use the default,\nplease rebind the drop item action to another key.

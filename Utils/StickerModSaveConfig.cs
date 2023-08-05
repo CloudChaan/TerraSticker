@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Terraria;
 using Terraria.ModLoader.Config;
 
-namespace StickersTest.Utils
+namespace TerraSticker.Utils
 {
     public class StickerModSaveConfig
     {

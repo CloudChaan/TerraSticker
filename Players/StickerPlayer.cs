@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Input;
-using StickersTest.UIs;
+using TerraSticker.UIs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 using Terraria.GameInput;
 using Terraria;
 using Terraria.ModLoader;
-using StickersTest.Items;
+using TerraSticker.Items;
 using Terraria.UI;
-using StickersTest.ModSystems;
-using StickersTest.Utils;
+using TerraSticker.ModSystems;
+using TerraSticker.Utils;
 
-namespace StickersTest.Players
+namespace TerraSticker.Players
 {
     public class StickerPlayer: ModPlayer
     {
@@ -55,6 +55,8 @@ namespace StickersTest.Players
 
         public override bool CanUseItem(Item item)
         {
+            if (Main.dedServ) return base.CanUseItem(item);
+            if (uISystem == null) return base.CanUseItem(item);
             if (!uISystem.IsCurrentStateNull())
             {
                 return false; // 禁止玩家使用物品

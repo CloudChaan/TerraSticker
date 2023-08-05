@@ -1,4 +1,4 @@
-displayName = Stickers
-author = cloud
+displayName = Let's Sticker!一起来发表情包吧！
+author = 云海海
 version = 1.0
 dllReferences = SixLabors.ImageSharp

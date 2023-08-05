@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria.ModLoader;
 using Terraria;
-using StickersTest.Utils;
+using TerraSticker.Utils;
 
-namespace StickersTest.CodeReference
+namespace TerraSticker.CodeReference
 {
     public class GifConverter : ModSystem
     {

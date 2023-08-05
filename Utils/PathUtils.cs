@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace StickersTest.Utils
+namespace TerraSticker.Utils
 {
     public class PathUtils
     {
@@ -18,16 +18,16 @@ namespace StickersTest.Utils
         public string relativeImageSavePath = "";
 
         public PathUtils() {
-            Initialize(ModContent.GetInstance<StickersTest>());
+            Initialize(ModContent.GetInstance<TerraSticker>());
         }
-        public void Initialize(StickersTest Instance)
+        public void Initialize(TerraSticker Instance)
         {
             imageSavePath = GetModSavePath(Instance);
             cachePath = GetModCachePath(Instance);
             netPackageCachePath = GetModNetPackageCachePath(Instance);
         }
 
-        public static string GetModSavePath(StickersTest Instance)
+        public static string GetModSavePath(TerraSticker Instance)
         {
             if (Instance != null)
             {
@@ -44,7 +44,7 @@ namespace StickersTest.Utils
                 return null;
             }
         }
-        public static string GetModCachePath(StickersTest Instance)
+        public static string GetModCachePath(TerraSticker Instance)
         {
             if (Instance != null)
             {
@@ -60,7 +60,7 @@ namespace StickersTest.Utils
                 return null;
             }
         }
-        public static string GetModNetPackageCachePath(StickersTest Instance)
+        public static string GetModNetPackageCachePath(TerraSticker Instance)
         {
             if (Instance != null)
             {

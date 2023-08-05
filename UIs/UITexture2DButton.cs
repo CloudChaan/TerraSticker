@@ -12,10 +12,10 @@ using Microsoft.Xna.Framework;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria;
-using StickersTest.Utils;
+using TerraSticker.Utils;
 using System.IO;
 
-namespace StickersTest.UIs
+namespace TerraSticker.UIs
 {
     public class UITexture2DButton : UIImageButton
     {
@@ -29,17 +29,17 @@ namespace StickersTest.UIs
 
         protected Texture2D borderTexture;
 
-        public UITexture2DButton(Texture2D texture, string path) : base(ModContent.Request<Texture2D>("StickersTest/Assets/Images/StickerBubble1x"))
+        public UITexture2DButton(Texture2D texture, string path) : base(ModContent.Request<Texture2D>("TerraSticker/Assets/Images/StickerBubble1x"))
         {
             imagePath = path;
             texture2d = texture;
             Width.Set(texture.Width, 0f);
             Height.Set(texture.Height, 0f);
         }
-        public UITexture2DButton(string path) : base(ModContent.Request<Texture2D>("StickersTest/Assets/Images/StickerBubble1x"))
+        public UITexture2DButton(string path) : base(ModContent.Request<Texture2D>("TerraSticker/Assets/Images/StickerBubble1x"))
         {
         }
-        public UITexture2DButton(Texture2D texture) : base(ModContent.Request<Texture2D>("StickersTest/Assets/Images/StickerBubble1x"))
+        public UITexture2DButton(Texture2D texture) : base(ModContent.Request<Texture2D>("TerraSticker/Assets/Images/StickerBubble1x"))
         {
             texture2d = texture;
             Width.Set(texture.Width, 0f);

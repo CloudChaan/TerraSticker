@@ -10,7 +10,7 @@ using Terraria.Localization;
 using Terraria.UI.Chat;
 using Color = Microsoft.Xna.Framework.Color;
 
-namespace StickersTest.CodeReference;
+namespace TerraSticker.CodeReference;
 
 public class ImageSnippet : TextSnippet, IImageSnippet
 {
@@ -80,7 +80,7 @@ public class ImageSnippet : TextSnippet, IImageSnippet
     {
         if (!justCheckingString && color != Color.Black)
         {
-            float opacity = StickersTest.ClientConfig.Opacity;
+            float opacity = TerraSticker.ClientConfig.Opacity;
 
             position += new Vector2(2f);
             spriteBatch.Draw(Texture, position, null, Color.White*opacity, 0f, Vector2.Zero, scale, SpriteEffects.None, 0f);

@@ -12,14 +12,14 @@ using SixLabors.ImageSharp.Processing;
 using SixLabors.ImageSharp.PixelFormats;
 using ReLogic.Content;
 using Terraria.ModLoader;
-using StickersTest.CodeReference;
-using StickersTest.ModConfigs;
+using TerraSticker.CodeReference;
+using TerraSticker.ModConfigs;
 using System.Windows.Forms;
 using Terraria.ID;
 using Terraria.Localization;
 using tModPorter;
 
-namespace StickersTest.Utils
+namespace TerraSticker.Utils
 {
     public static class ImageUtils
     {
@@ -36,7 +36,7 @@ namespace StickersTest.Utils
 
         public static Texture2D LoadAssetFromCacheImageByStickerPath(string stickerPath)
         {
-            return LoadAssetFromCacheImage(ModContent.GetInstance<StickersTest>().myPathUtils.GetCachePathFromOriginalImagePath(stickerPath));
+            return LoadAssetFromCacheImage(ModContent.GetInstance<TerraSticker>().myPathUtils.GetCachePathFromOriginalImagePath(stickerPath));
         }
 
 
@@ -123,7 +123,7 @@ namespace StickersTest.Utils
                 // Resize the image to a width of 180 pixels, height is calculated based on the aspect ratio
                 int resizedHeight = (int)(180 / aspectRatio);
                 image.Mutate(x => x.Resize(180, resizedHeight));
-                string directory = ModContent.GetInstance<StickersTest>().myPathUtils.cachePath;
+                string directory = ModContent.GetInstance<TerraSticker>().myPathUtils.cachePath;
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(path);
                 string newPath = Path.Combine(directory, $"{fileNameWithoutExtension}_Cache.PNG");
 
@@ -217,32 +217,32 @@ namespace StickersTest.Utils
         }
 
 
-        public static async void RenderGif(Image<Rgba32> gif, string sendBy, string imagePath)
+        public static async Task RenderGif(Image<Rgba32> gif, string sendBy, string imagePath)
         {
-            int framesLimit = StickersTest.ClientConfig.FramesLimit;
+            int framesLimit = TerraSticker.ClientConfig.FramesLimit;
             var gifFramesStreams = await ExtractGifFrames(gif, framesLimit);
 
             // Sends the Gif
             GifConverter.EnqueueGifFramesStreams(gifFramesStreams, Main.LocalPlayer.name, imagePath);
         }
 
-        public static void SendGif(MemoryStream gifStream, Image<Rgba32> gif, string sendBy, string imagePath)
+        public static async Task SendGif(MemoryStream gifStream, Image<Rgba32> gif, string sendBy, string imagePath)
         {
-            RenderGif(gif, sendBy, imagePath);
+            await RenderGif(gif, sendBy, imagePath);
             // 多人发包
             if (Main.netMode is NetmodeID.MultiplayerClient)
             {
-                ModContent.GetInstance<StickersTest>().SendGifPacket(gifStream);
+                ModContent.GetInstance<TerraSticker>().SendGifPacket(gifStream);
             }
 
         }
 
         public static void LocalSendImage(MemoryStream imageStream, string path)
         {
-            if (imageStream.Length > StickersTest.ServerConfig.MaximumFileSize * 1024 * 1024)
+            if (imageStream.Length > TerraSticker.ServerConfig.MaximumFileSize * 1024 * 1024)
             {
-                string warning = Language.GetTextValue("Mods.ImageChat.ImageTooLarge", StickersTest.ServerConfig.MaximumFileSize);
-                if (StickersTest.ClientConfig.WindowWarning)
+                string warning = Language.GetTextValue("Mods.ImageChat.ImageTooLarge", TerraSticker.ServerConfig.MaximumFileSize);
+                if (TerraSticker.ClientConfig.WindowWarning)
                 {
                     MessageBox.Show(warning, Language.GetTextValue("Mods.ImageChat.Warn"));
                 }
@@ -257,7 +257,7 @@ namespace StickersTest.Utils
             if (BasicsSystem.SendDelay > 0)
             {
                 string warning = Language.GetTextValue("Mods.ImageChat.Wait", BasicsSystem.SendDelay.ToString("F1"));
-                if (StickersTest.ClientConfig.WindowWarning)
+                if (TerraSticker.ClientConfig.WindowWarning)
                 {
                     MessageBox.Show(warning, Language.GetTextValue("Mods.ImageChat.Warn"));
                 }
@@ -270,7 +270,7 @@ namespace StickersTest.Utils
             }
 
             // 设置冷却
-            BasicsSystem.SendDelay = StickersTest.ServerConfig.SendCap;
+            BasicsSystem.SendDelay = TerraSticker.ServerConfig.SendCap;
 
             // 发送图片
             Main.NewText($"<{Main.LocalPlayer.name}>");
@@ -279,7 +279,7 @@ namespace StickersTest.Utils
             // 多人发包
             if (Main.netMode is NetmodeID.MultiplayerClient)
             {
-                ModContent.GetInstance<StickersTest>().SendImagePacket(imageStream);
+                ModContent.GetInstance<TerraSticker>().SendImagePacket(imageStream);
             }
         }
 

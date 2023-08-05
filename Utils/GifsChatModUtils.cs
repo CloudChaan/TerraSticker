@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Terraria;
 using Microsoft.Xna.Framework;
 
-namespace StickersTest.Utils
+namespace TerraSticker.Utils
 {
     public class GifsChatModUtils
     {
