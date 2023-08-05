@@ -1,0 +1,16 @@
+# This file will automatically update with entries for new content after a build and reload
+
+Items: {
+	StickerBubble: {
+		DisplayName: 表情包泡泡
+		Tooltip: 快用你的可爱♡填满它！
+	}
+}
+
+Keybinds.LongPressToOpenStickerSendPanel.DisplayName: 长按打开表情包面板♡
+ImageTooLarge: 请选择大小低于{0}MB的图像文件
+OpenImage: 打开图片
+SelectImage: 选择图片
+Warn: 警告
+Wait: 你必须等待{0}秒才能发送图像
+description: 现在你的表情包库里还没有表情包哦{0}♡\n点击右上角的放置表情包按钮（↑{1}）打开表情包文件夹\n将你的表情包放进去吧，在此之后回到游戏点击刷新按钮（⟳）\n请避免放入文件名相同而后缀不同的图片！\n发送表情包方法：在“控件”中绑定快捷键，然后长按它发送表情包！

@@ -1,0 +1,4 @@
+displayName = Stickers
+author = cloud
+version = 1.0
+dllReferences = SixLabors.ImageSharp
